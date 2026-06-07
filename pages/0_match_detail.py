@@ -69,7 +69,7 @@ def _load_b64(path: str) -> str:
         return "" 
     
 def player_img_tag(photo_key: str, num: str) -> str:
-    b64 = _load_b64(str(Path("static") / "players" / photo_key)) if photo_key else ""
+    b64 = _load_b64(str(Path("static") / "players" / photo_key.lower())) if photo_key else ""
     if b64:
         return (
             "<img src='data:image/png;base64," + b64 + "' "
