@@ -68,7 +68,7 @@ def form_html(form: str, align: str = "left") -> str:
 def flag_b64(team_code: str) -> str:
     """Returns base64 encoded flag image as inline src."""
     try:
-        path = Path(__file__).parent / "static" / "flags" / f"{team_code}.png"
+        path = Path(__file__).parent.parent / "static" / "flags" / f"{team_code}.png"
         with open(path, "rb") as f:
             b64 = base64.b64encode(f.read()).decode()
         return f"data:image/png;base64,{b64}"
